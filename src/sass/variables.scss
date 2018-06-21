@@ -1,0 +1,32 @@
+$yellow:#fdb500;
+$yellow-1: darken($yellow, 5%);
+$yellow-2: darken($yellow, 10%);
+$yellow-3: darken($yellow, 15%);
+$yellow-5: darken($yellow, 25%);
+
+$red: #ef9a9a;
+$red-1: darken($red, 5%);
+$red-2: darken($red, 10%);
+$red-3: darken($red, 15%);
+
+$grey: #e0e1e6;
+$grey-1: darken($grey, 5%);
+$grey-2: darken($grey, 10%);
+$grey-3: darken($grey, 15%);
+
+$green: #82ff00;
+$green-5: darken($green, 25%);
+$blue: #00b4da;
+$blue-5: darken($blue, 25%);
+$pink: #ff1b6e;
+$pink-5: darken($pink, 25%);
+
+$brickred: #e74c3c;
+$brickred-5: darken($brickred, 25%);
+$count-bg: #333333;
+$count-border: #666666;
+
+$card-front-bg: #446644;
+$card-front:
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));

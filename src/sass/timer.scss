@@ -1,0 +1,17 @@
+.timer {
+	display: inline-block;
+	min-width: 6em;
+	padding: 0.5em;
+	text-align: center;
+	color: #fff;
+	border: 4px $count-border outset;
+	background: $count-bg;
+	font-family: "Orbitron", sans-serif;
+	font-size: 1.5em;
+}
+
+@media (max-width: 480px) {
+	.timer {
+		font-size: 1em;
+	}
+}

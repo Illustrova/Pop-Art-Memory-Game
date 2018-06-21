@@ -1,0 +1,84 @@
+mixin character(name, bg, pattern)
+	symbol(id=name)
+		rect(fill="url(#" + bg + ")" height="100%" width="100%" rx="15" ry="15")
+		rect(rx="15" ry="15" width="100%" height="100%" fill="url(#"+ pattern + ")")&attributes(attributes)
+		image(width="100%" height="100%" xlink:href="img/" + name + ".png")
+
+mixin radialGradient(name, stops)
+	radialGradient(id=name)
+		each val in stops
+			stop(stop-color=val.color, offset=val.offset)/
+
+svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="overflow: visible")
+	defs
+		include clips.pug
+		+radialGradient("pink-grad", [{color: "#ff649a", offset: 0}, {color: "#ff528b", offset: 0.7}, {color: "#ff3175", offset: 0.9}, {color: "#ff1b6e", offset: 1}])
+		+radialGradient("blue-grad", [{color: "#57e7ff", offset: 0}, {color: "#1bd7ff", offset: 0.7}, {color: "#00bedf", offset: 1}])
+		+radialGradient("yellow-grad", [{color: "#fff41f", offset: 0}, {color: "#ffec16", offset: 0.6}, {color: "#ffe007", offset: 0.8}, {color: "#ffda00", offset: 1}])
+		linearGradient(id="armygreen-grad" x1="0%" y1="0%" x2="0%" y2="100%")
+			stop(offset="0%" stop-color="#a9af27")/
+			stop(offset="100%" stop-color="#939923")/
+		linearGradient(id="aqua-grad" x1="0%" y1="0%" x2="0%" y2="100%")
+			stop(offset="0%" stop-color="#3ffff1")/
+			stop(offset="100%" stop-color="#15e8d3")/
+
+		//-Gradient for Sun pattern
+		radialGradient(id='sun-grad' cx='400' cy='400' r='63.3%' gradientUnits='userSpaceOnUse')
+			stop(offset='0' stop-color='#ffffff')/
+			stop(offset='1' stop-color='#fffc40')/
+
+		pattern(id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse")
+				g(fill="#eeeeee")
+					circle(cx="3" cy="3" r="3")/
+					circle(cx="13" cy="13" r="3")/
+
+		pattern(id="dots-big" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse")
+				g(fill="#ffffff" fill-opacity="0.5")
+					circle(cx="13" cy="13" r="10")/
+					circle(cx="36" cy="36" r="6")/
+
+		pattern(id="dots-blue" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse")
+				g(fill="#ebfdff" fill-opacity="0.4")
+					circle(cx="3" cy="3" r="3")/
+					circle(cx="13" cy="13" r="3")/
+
+		pattern(id="stripes" x="0" y="0" width="10" height="300" patternUnits="userSpaceOnUse")
+			rect(fill="#ffffff" fill-opacity="0.5" x="0" y="0" width="5" height="300")
+		pattern(id="sun" x="0" y="0" width='100%' height='100%' viewBox='0 0 800 800')
+			path(id="sun-pattern" fill-opacity='0.42' fill='url(#sun-grad)' d='M998.7 439.2c1.7-26.5 1.7-52.7 0.1-78.5L401 399.9c0 0 0-0.1 0-0.1l587.6-116.9c-5.1-25.9-11.9-51.2-20.3-75.8L400.9 399.7c0 0 0-0.1 0-0.1l537.3-265c-11.6-23.5-24.8-46.2-39.3-67.9L400.8 399.5c0 0 0-0.1-0.1-0.1l450.4-395c-17.3-19.7-35.8-38.2-55.5-55.5l-395 450.4c0 0-0.1 0-0.1-0.1L733.4-99c-21.7-14.5-44.4-27.6-68-39.3l-265 537.4c0 0-0.1 0-0.1 0l192.6-567.4c-24.6-8.3-49.9-15.1-75.8-20.2L400.2 399c0 0-0.1 0-0.1 0l39.2-597.7c-26.5-1.7-52.7-1.7-78.5-0.1L399.9 399c0 0-0.1 0-0.1 0L282.9-188.6c-25.9 5.1-51.2 11.9-75.8 20.3l192.6 567.4c0 0-0.1 0-0.1 0l-265-537.3c-23.5 11.6-46.2 24.8-67.9 39.3l332.8 498.1c0 0-0.1 0-0.1 0.1L4.4-51.1C-15.3-33.9-33.8-15.3-51.1 4.4l450.4 395c0 0 0 0.1-0.1 0.1L-99 66.6c-14.5 21.7-27.6 44.4-39.3 68l537.4 265c0 0 0 0.1 0 0.1l-567.4-192.6c-8.3 24.6-15.1 49.9-20.2 75.8L399 399.8c0 0 0 0.1 0 0.1l-597.7-39.2c-1.7 26.5-1.7 52.7-0.1 78.5L399 400.1c0 0 0 0.1 0 0.1l-587.6 116.9c5.1 25.9 11.9 51.2 20.3 75.8l567.4-192.6c0 0 0 0.1 0 0.1l-537.3 265c11.6 23.5 24.8 46.2 39.3 67.9l498.1-332.8c0 0 0 0.1 0.1 0.1l-450.4 395c17.3 19.7 35.8 38.2 55.5 55.5l395-450.4c0 0 0.1 0 0.1 0.1L66.6 899c21.7 14.5 44.4 27.6 68 39.3l265-537.4c0 0 0.1 0 0.1 0L207.1 968.3c24.6 8.3 49.9 15.1 75.8 20.2L399.8 401c0 0 0.1 0 0.1 0l-39.2 597.7c26.5 1.7 52.7 1.7 78.5 0.1L400.1 401c0 0 0.1 0 0.1 0l116.9 587.6c25.9-5.1 51.2-11.9 75.8-20.3L400.3 400.9c0 0 0.1 0 0.1 0l265 537.3c23.5-11.6 46.2-24.8 67.9-39.3L400.5 400.8c0 0 0.1 0 0.1-0.1l395 450.4c19.7-17.3 38.2-35.8 55.5-55.5l-450.4-395c0 0 0-0.1 0.1-0.1L899 733.4c14.5-21.7 27.6-44.4 39.3-68l-537.4-265c0 0 0-0.1 0-0.1l567.4 192.6c8.3-24.6 15.1-49.9 20.2-75.8L401 400.2c0 0 0-0.1 0-0.1L998.7 439.2z')/
+	+character("girl1", "pink-grad", "dots")
+	+character("girl2", "pink-grad", "dots-big")
+	+character("girl3", "yellow-grad", "dots-blue")
+	+character("girl4", "armygreen-grad", "stripes")
+	+character("girl5", "blue-grad", "dots-big")
+	+character("girl6", "pink-grad", "stripes")
+	+character("girl7", "armygreen-grad", "sun")
+	+character("girl8", "blue-grad", "dots-blue")
+	+character("girl9", "yellow-grad", "sun")
+	+character("girl10", "blue-grad", "dots-big")
+	+character("girl11", "armygreen-grad", "stripes")
+	+character("man", "yellow-grad", "sun")
+
+	symbol#icon-star-fill(viewBox="0 0 512 512")
+		path(fill="#fdb500" d="M447 161l-130-12-51-120c-4-8-16-8-20 0l-51 120-130 12c-9 1-13 12-6 18l98 86-29 127c-2 9 8 16 16 11l112-66 112 66c8 5 18-2 16-11l-29-127 98-86c7-6 3-17-6-18z")/
+		path(fill="#e5a100" d="M284 73l-18-44c-4-8-16-8-20 0l-51 120-130 12c-9 1-13 12-6 18l98 86-29 127c-2 9 8 16 16 11l15-8c24-159 93-275 125-322z")/
+
+	symbol#icon-star-outline(viewBox="0 0 512 512" fill="#fdb500")
+		path(d="M363 268l95-83c5-5 7-12 5-19s-8-12-15-13l-126-11-23-55a7 7 0 1 0-14 6l25 59c1 2 4 4 6 4l130 12c2 0 3 2 3 2l-1 3-98 86c-2 2-3 5-2 8l28 127c1 1 0 2-1 3h-3l-112-67h-8l-112 67h-3c-1-1-2-2-1-3l15-66a8 8 0 0 0-15-3l-15 66c-1 7 1 14 7 18a18 18 0 0 0 20 1l108-64 108 64c7 4 14 3 20-1s8-11 7-18l-28-123z")/
+		path(d="M54 185l95 83-6 27a7 7 0 1 0 14 3l7-31c1-3 0-6-2-8l-98-86-1-3s1-2 3-2l130-12c2 0 5-2 6-4l51-120c1-2 2-2 3-2s2 0 3 2l14 33a7 7 0 1 0 13-6l-14-33c-2-7-9-11-16-11s-14 4-16 11l-50 116-126 11c-7 1-13 6-15 13s0 14 5 19z")/
+
+	symbol#icon-star-drops(viewBox="0 0 512 512"  fill="#fdb500")
+		path(d="M162 119a7 7 0 0 0 12-9c-4-7-35-76-45-89a24 24 0 0 0-33-6c-10 8-13 23-5 33 9 14 65 65 71 71zm-57-92a9 9 0 0 1 12 2c5 7 16 30 27 52-18-17-36-35-41-42-3-3-2-9 2-12z")/
+		path(d="M341 119a7 7 0 0 0 9 0c6-6 62-57 71-71a24 24 0 0 0-38-27c-10 13-41 82-45 89-1 4 0 7 3 9zm54-90a9 9 0 0 1 12-2c4 3 5 9 2 12-5 7-23 25-41 42 11-22 22-45 27-52z")/
+		path(d="M509 299c-2-5-7-10-13-12-16-5-91-14-99-15a8 8 0 0 0-5 14 1119 1119 0 0 0 96 48 24 24 0 0 0 23-17c2-6 1-12-2-18zm-12 14a9 9 0 0 1-11 5c-8-2-31-14-52-26 24 3 50 7 57 10a9 9 0 0 1 6 11z")/
+		path(d="M123 277c-1-3-4-5-8-5-8 1-83 10-99 15a24 24 0 0 0-15 30 24 24 0 0 0 30 15c16-5 82-42 89-46 3-2 5-5 3-9zm-97 41a9 9 0 0 1-11-5 9 9 0 0 1 6-11c7-3 33-7 57-10-21 12-44 24-52 26z")/
+		path(d="M256 373c-3 0-6 2-7 6-2 8-16 82-16 99a24 24 0 0 0 47 0c0-17-14-91-16-99-1-4-4-6-8-6zm0 113c-4 0-8-4-8-8 0-8 4-34 8-58 5 24 9 50 9 58 0 4-4 8-9 8z")/
+		g(fill="#fdb500")
+			path(d="M123 25c7 9 26 49 36 72 2 3-3 6-5 4-19-18-50-48-57-57a16 16 0 1 1 26-19z")/
+			path(d="M389 25c-7 9-26 49-36 72-2 3 3 6 5 4 19-18 50-48 57-57a16 16 0 1 0-26-19z")/
+			path(d="M493 294c-10-3-54-9-79-12-4-1-6 5-2 7 22 12 60 33 71 36a16 16 0 1 0 10-31z")/
+			path(d="M19 294c10-3 54-9 79-12 4-1 6 5 2 7-22 12-60 33-71 36a16 16 0 1 1-10-31z")/
+			path(d="M240 478c0-12 8-55 13-80 1-3 6-3 7 0 5 25 13 68 13 80a16 16 0 0 1-33 0z")/
+
+	symbol#icon-restart(viewBox="0 0 45 45")
+		path(d="M1.105,23.621c0,11.412,10.488,21.354,21.905,21.354c8.146,0,15.184-3.738,18.554-10.577   c1.36-2.751-4.247-3.941-5.527-1.563c-2.621,4.712-7.504,5.508-13.026,5.508c-8.31,0-15.441-6.816-15.441-14.722   c0-8.179,7.26-14.935,15.441-14.935c2.792,0,4.587,0.615,5.745,1.322c1.414,0.863,1.186,3.055,0.091,4.299   c-2.058,2.339-4.569,5.32-4.569,5.32c-2.388,2.388,0.314,2.35,0.314,2.35l14.89,0.008c1.657,0.001,3.638,0.242,4.104-0.196   c0.47-0.44,0.217-2.435,0.219-4.092l0.023-16.585c-0.029-2.468-2.42-0.058-2.42-0.058L37.71,4.868   c-1.153,1.189-3.037,1.185-4.432,0.289c-2.092-1.345-5.556-2.911-10.271-2.835C11.594,2.322,1.105,12.195,1.105,23.621z" fill="#ffffff")/

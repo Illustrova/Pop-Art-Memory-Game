@@ -1,0 +1,84 @@
+//Declare variables
+@import "variables.scss";
+//Mixins
+@import "mixins.scss";
+@import "trigonometry.scss";
+//JSON data
+@import "clip-coordinates.json";
+/*Reset default styles*/
+@import "reset.scss";
+//PARTIALS
+/*Deck*/
+@import "deck.scss";
+/*Dialogs*/
+@import "dialog.scss";
+/*Buttons*/
+@import "buttons.scss";
+/*CONTROL PANEL*/
+/*Timer*/
+@import "timer.scss";
+/*Star rating*/
+@import "star-rating.scss";
+/*Moves counter*/
+@import "moves-counter.scss";
+/*Game level range input*/
+@import "level-range.scss";
+/*Restart button*/
+@import "btn-restart.scss";
+/*Card animation effects*/
+@import "card-animation.scss";
+
+body {
+	font-family: "Open Sans", sans-serif;
+	perspective: 2000px;
+	margin: 0 auto;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'4\' height=\'4\' viewBox=\'0 0 4 4\'%3E%3Cpath fill=\'%2316d646\' fill-opacity=\'0.4\' d=\'M1 3h1v1H1V3zm2-2h1v1H3V1z\'%3E%3C/path%3E%3C/svg%3E");
+}
+
+body > .basesvg {
+	display: none;
+}
+
+h1 {
+	@include text3d($yellow, 0.9, 0.7, 1.5);
+	transform: perspective(500px) rotateX(-11deg) rotateY(23deg);
+	text-align: center;
+	letter-spacing: 3px;
+	font-family: "Bangers", cursive;
+	font-size: 2.5em;
+}
+
+section {
+	margin-bottom: 1em;
+}
+
+.controls {
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90vw;
+	margin-top: 2em;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.controls-group-1,
+.controls-group-2 {
+	display: flex;
+	align-items: flex-end;
+	flex-grow: 2;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin-bottom: 1em;
+}
+
+.widget {
+	flex-grow: 2;
+	margin: 0 0.5em;
+}
+
+.widget.restart {
+	flex-grow: 0;
+}

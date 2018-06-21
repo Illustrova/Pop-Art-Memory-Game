@@ -1,0 +1,84 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset='utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title MEMORY GAME - Udacity project
+		link(rel='stylesheet', href='css/app.css')
+		link(href="https://fonts.googleapis.com/css?family=Orbitron:500" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.9/dialog-polyfill.min.css")
+		//if IE
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
+	body
+		// SVG RESOURCES: START
+		include svgsprite.pug
+		include cardbase.pug
+		// SVG RESOURCES: END
+		header
+			h1 Memory Game
+		section.controls
+			.controls-group-1
+				div#timer.timer.widget
+				div#star-rating.stars.widget
+					ul.stars-container
+						li.star
+							svg.star-icon
+								use(class="icon-fill" xlink:href="#icon-star-fill")/
+								use(class="icon-outline" xlink:href="#icon-star-outline")/
+								use(class="icon-drops" xlink:href="#icon-star-drops")/
+						li.star
+							svg.star-icon
+								use(class="icon-fill" xlink:href="#icon-star-fill")/
+								use(class="icon-outline" xlink:href="#icon-star-outline")/
+								use(class="icon-drops" xlink:href="#icon-star-drops")/
+						li.star
+							svg.star-icon
+								use(class="icon-fill" xlink:href="#icon-star-fill")/
+								use(class="icon-outline" xlink:href="#icon-star-outline")/
+								use(class="icon-drops" xlink:href="#icon-star-drops")/
+				div.moves-info.widget
+					p.moves-title  Moves
+					div.moves
+						span#moves-in.moves-in 0
+						span#moves-out.moves-out 0
+			.controls-group-2
+				form.level-select.widget
+					.output-container
+						p#level-output.medium Medium
+						output(id="cards-output" for="cardsamount" class="cards-output") 16
+					input(type="range" min="12" max="24" value="16" step="4" name="cardsamount" id="cards-input")
+
+				button#restart.btn-yellow.restart.widget
+					svg.restart-icon
+						use(xlink:href="#icon-restart")
+					span.restart-text Restart
+		section#deck.deck
+		// MODALS: START
+		dialog#restart-dialog.dialog
+			h2 Restart?
+			p Are you sure you want to start a new game? Your current progress will be lost.
+			.buttons
+				button#btn-restart.btn-yellow Yes!
+				button#btn-cancel.btn-grey No, I hit it by mistake
+		dialog#win-dialog.dialog
+			h2 Congrats!!!
+			p You won the game! Here is your result:
+			.result-moves
+				h3 Moves
+				div#total-moves.moves 0
+			.result-time
+				h3 Time
+				div#total-time.timer 00:00
+			.result-stars
+				h3 Stars
+				div#total-stars
+			p What do you want to do now?
+			.buttons
+				button#play.btn-yellow Play again!
+				a.btn-red(href="https://github.com/illustrova", target="_blank", rel="noopener noreferrer") Visit my Github
+		// MODALS: END
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.9/dialog-polyfill.min.js")
+		script(src='js/app.js')

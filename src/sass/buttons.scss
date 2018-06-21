@@ -1,0 +1,79 @@
+.btn-yellow {
+	padding: 0.5em 1em;
+	color: #fff;
+	border-bottom: solid 4px $yellow-1;
+	border-radius: 5px;
+	background-color: $yellow;
+	font-family: "Bangers";
+	font-size: 1.5em;
+
+	&:focus {
+		outline: dotted 1px $yellow-2;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-bottom: solid 4px $yellow-2;
+		background-color: $yellow-1;
+	}
+
+	&:active {
+		cursor: pointer;
+		border-top: solid 4px $yellow-3;
+		border-bottom: none;
+		background-color: $yellow-2;
+	}
+}
+
+.btn-red {
+	padding: 0.5em 1em;
+	color: #fff;
+	border-bottom: solid 4px $red-1;
+	border-radius: 5px;
+	background-color: $red;
+	font-family: "Bangers";
+	font-size: 1.5em;
+
+	&:focus {
+		outline: dotted 1px $red-2;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-bottom: solid 4px $red-2;
+		background-color: $red-1;
+	}
+
+	&:active {
+		cursor: pointer;
+		border-top: solid 4px $red-3;
+		border-bottom: none;
+		background-color: $red-2;
+	}
+}
+
+.btn-grey {
+	padding: 0.5em 1em;
+	border-bottom: solid 4px $grey-1;
+	border-radius: 5px;
+	background-color: $grey;
+	font-family: "Bangers";
+	font-size: 1.5em;
+
+	&:focus {
+		outline: dotted 1px $grey-2;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-bottom: solid 4px $grey-2;
+		background-color: $grey-1;
+	}
+
+	&:active {
+		cursor: pointer;
+		border-top: solid 4px $grey-3;
+		border-bottom: none;
+		background-color: $grey-2;
+	}
+}

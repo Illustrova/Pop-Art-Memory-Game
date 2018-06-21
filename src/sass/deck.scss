@@ -1,0 +1,118 @@
+#deck-wrapper {
+	position: relative;
+	display: flex;
+	overflow: visible;
+	align-content: space-around;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	height: 100%;
+	padding: 15px;
+}
+
+.deck-appear .card {
+	transform: scale(1);
+}
+
+.deck {
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	border: solid 2px $yellow-2;
+	border-radius: 15px;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg width=\'10\' height=\'10\' viewBox=\'0 0 10 10\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23e71919\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'1\'/%3E%3Ccircle cx=\'8\' cy=\'8\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+//Keep specific
+.deck li.card.flip {
+	overflow: visible;
+	transform: rotateY( 180deg );
+}
+
+.card {
+	max-width: 202px;
+	max-height: 202px;
+	list-style: none;
+	transition: all 0.6s;
+	transform: scale(0.9);
+	transform-origin: 50% 50%;
+	transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.card-front {
+	z-index: 1;
+	cursor: pointer;
+	border: solid 3px $yellow-2;
+	border-radius: 15px;
+	background-color: $card-front-bg;
+	background-image: $card-front;
+	background-size: 35px 60px;
+	box-shadow: 3px 3px 6px 1px rgba(181,181,181,1);
+}
+
+.card-back {
+	cursor: pointer;
+	transform: rotateY( 180deg );
+}
+
+.deck-12 {
+	width: 90vw;
+	height: 90vw/4*3;
+}
+
+.deck-12 .card {
+	width: 24%;
+	height: (100/3 - 1) + %;
+	margin: 0.4%;
+}
+
+.deck-16 {
+	width: 90vw;
+	height: 90vw;
+	max-height: 1000px;
+}
+
+.deck-16 .card {
+	width: 24%;
+	height: 24%;
+	margin: 0.4%;
+}
+
+.deck-20 {
+	width: 90vw;
+	height: 90vw/4*5;
+	max-height: 1200px;
+}
+
+.deck-20 .card {
+	width: 24%;
+	height: (100/5 - 1) + %;
+	margin: 0.4%;
+}
+
+.deck-24 {
+	width: 90vw;
+	height: 90vw/4*6;
+	max-height: 1400px;
+}
+
+.deck-24 .card {
+	width: 24%;
+	height: (100/6 - 1) + %;
+	margin: 0.4%;
+}
+
+.match .solid-image {
+	visibility: hidden;
+}

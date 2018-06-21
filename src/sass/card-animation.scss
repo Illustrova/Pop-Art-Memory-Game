@@ -1,0 +1,41 @@
+//get next point on the circle's circumference, knowing starting point, center of circle and angle
+@function getNextPoint($x0, $y0) {
+	//angle
+	$alpha: 360/255; //by number of pieces in image
+	//center of circle
+	$x: 101;
+	$y: 101;
+	$rx: $x0 - $x;
+	$ry: $y0 - $y;
+	$c: cos($alpha);
+	$s: sin($alpha);
+	$x1: $x + $rx * $c - $ry * $s;
+	$y1: $y + $rx * $s + $ry * $c;
+	@return ("x":$x1, "y": $y1);
+}
+
+//x0 and y0
+$x-start: 30;
+$y-start: 30;
+
+@each $key, $clip in $clips {
+	// find center of clip element
+	$center-x: map-get($clip, x) +  (map-get($clip, width) / 2);
+	$center-y: map-get($clip, y) +  (map-get($clip, height) / 2);
+	//find the coordinates of destination point
+	$dest: getNextPoint($x-start, $y-start);
+	//reassign x0 and y0
+	$x-start: map-get($dest, x);
+	$y-start: map-get($dest, y);
+	//calculate transormation (translate) value in percent. 202px is the base picture width (100%)
+	$transformX:  round((map-get($dest, x) - $center-x)/202*100) + %;
+	$transformY:  round((map-get($dest, y) - $center-y)/202*100) + %;
+
+	.match .el-#{$key} {
+		transform: translate($transformX, $transformY) rotate3d(0, 1, 1, 40deg);
+		transform-origin: 50% 50%;
+		opacity: 0;
+		transition: all 1.5s ease-out;
+		backface-visibility: visible;
+	}
+}

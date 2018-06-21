@@ -1,0 +1,9 @@
+svg.basesvg(width="100%" height="100%" style="overflow: visible")
+	g.breaking-image
+		- var i = 1;
+		while i <= 255
+			g(class="el-clip-" + i, clip-path="url(#clip-" + i++ + ")")
+				use(height="100%", width="100%")
+
+	g.solid-image
+		use(height="100%", width="100%")
