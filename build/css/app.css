@@ -4248,6 +4248,7 @@ section {
 }
 
 .controls {
+	max-width: 1000px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
