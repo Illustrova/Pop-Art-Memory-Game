@@ -336,7 +336,10 @@ startGame();
 
 //Reset cards and progress
 function resetGame() {
+	//Reset moves counter
 	openedCards = 0;
+	addMove(openedCards);
+
 	matches = 0;
 
 	//Remove deck extra classes
