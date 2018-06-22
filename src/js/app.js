@@ -245,12 +245,13 @@ function removeStar(starindex) {
 //Timer
 function startTimer() {
 	interval = setInterval(function() {
+		second++;
 		timer.textContent =
 			(hour ? addZero(hour) + ' : ' : '') +
 			addZero(minute) +
 			' : ' +
 			addZero(second);
-		second++;
+
 		if (second === 60) {
 			minute++;
 			second = 0;
@@ -271,7 +272,7 @@ function resetTimer() {
 	timer.textContent = '00 : 00';
 }
 
-//Add zero to  unify number format
+//Add zero to unify number format
 function addZero(number) {
 	return ('0' + number).slice(-2);
 }
@@ -361,17 +362,17 @@ function resetGame() {
 }
 
 function endGame() {
+	clearInterval(interval);
 	totalTime.textContent =
 		(hour ? addZero(hour) + ' : ' : '') +
 		addZero(minute) +
 		' : ' +
 		addZero(second);
-	clearInterval(interval);
 	totalMoves.textContent = openedCards;
 	const starsCopy = starRating.cloneNode(true);
 	totalStars.appendChild(starsCopy);
 	setTimeout(function() {
 		winDialog.showModal();
-	}, 1500);
+	}, 0);
 
 }
