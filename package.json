@@ -1,5 +1,5 @@
 {
-  "name": "memory-game-udacity-project",
+  "name": "Pop-Art-Memory-Game",
   "version": "1.0.0",
   "description": "A classic memory game - experimenting with SVG resources and complicated CSS transitions. A project for Udacity Front End Developer Nanodegree, ",
   "main": "gulpfile.js",
@@ -9,17 +9,17 @@
   "author": "Irina Illustrova",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.26.5",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-pug": "^4.0.1",
-    "gulp-responsive": "^2.10.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-responsive": "^2.14.0",
+    "gulp-sass": "^4.0.2"
   },
   "dependencies": {
-    "node-sass-json-importer": "^3.2.0"
+    "node-sass-json-importer": "^3.3.1"
   }
 }
