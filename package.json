@@ -4,13 +4,14 @@
   "description": "A classic memory game - experimenting with SVG resources and complicated CSS transitions. A project for Udacity Front End Developer Nanodegree, ",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d build"
   },
   "author": "Irina Illustrova",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.5",
     "del": "^3.0.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-imagemin": "^4.1.0",
