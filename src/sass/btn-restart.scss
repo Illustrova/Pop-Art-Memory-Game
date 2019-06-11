@@ -1,6 +1,5 @@
 .restart {
-	margin: 1em 0.5em;
-	font-size: 2em;
+	font-size: 1em;
 }
 
 .restart:hover .restart-icon {
@@ -19,16 +18,27 @@
 	padding-left: 0.5em;
 	letter-spacing: 2px;
 	color: #fff;
-	font-family: "Bangers";
+	font-family: 'Bangers';
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	.restart {
-		font-size: 1.5em;
+		font-size: 0.75em;
 	}
 
 	.restart-icon {
-		width: 0.75em;
-		height: 0.75em;
+		width: 1em;
+		height: 1em;
+	}
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+	.restart {
+		font-size: 1em;
+		display: inline-block;
+	}
+
+	.restart-text {
+		display: none;
 	}
 }

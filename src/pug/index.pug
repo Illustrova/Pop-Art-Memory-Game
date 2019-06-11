@@ -5,10 +5,11 @@ html(lang="en")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		title MEMORY GAME - Udacity project
-		link(rel='stylesheet', href='css/app.css')
 		link(href="https://fonts.googleapis.com/css?family=Orbitron:500" rel="stylesheet")
 		link(href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet")
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+		link(rel='stylesheet', href='css/app.css')
+
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.9/dialog-polyfill.min.css")
 		//if IE
 			script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
@@ -19,8 +20,8 @@ html(lang="en")
 		// SVG RESOURCES: END
 		header
 			h1 Memory Game
-		section.controls
-			.controls-group-1
+		main.container
+			section.controls
 				div#timer.timer.widget
 				div#star-rating.stars.widget
 					ul.stars-container
@@ -44,18 +45,16 @@ html(lang="en")
 					div.moves
 						span#moves-in.moves-in 0
 						span#moves-out.moves-out 0
-			.controls-group-2
 				form.level-select.widget
 					.output-container
 						p#level-output.medium Medium
 						output(id="cards-output" for="cardsamount" class="cards-output") 16
 					input(type="range" min="12" max="24" value="16" step="4" name="cardsamount" id="cards-input")
-
 				button#restart.btn-yellow.restart.widget
 					svg.restart-icon
 						use(xlink:href="#icon-restart")
 					span.restart-text Restart
-		section#deck.deck
+			section#deck.deck
 		// MODALS: START
 		dialog#restart-dialog.dialog
 			h2 Restart?

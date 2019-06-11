@@ -1,0 +1,97 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	perspective: 2000px;
+	margin: 0 auto;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2316d646' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+body > .basesvg {
+	display: none;
+	margin-top: 5vh;
+}
+
+header {
+	max-height: 5%;
+	max-height: 5vh;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: -2%;
+}
+
+h1 {
+	@include text3d($yellow, 0.9, 0.7, 1.5);
+	transform: perspective(500px) rotateX(-11deg) rotateY(23deg);
+	text-align: center;
+	letter-spacing: 3px;
+	font-family: 'Bangers', cursive;
+	font-size: 2.5em;
+	width: 100%;
+	display: inline-block;
+}
+
+main {
+	display: flex;
+	padding: 0.5em;
+	margin-top: 4em;
+}
+
+section {
+	margin-bottom: 1%;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column-reverse;
+	height: 80vh;
+	max-height: 100%;
+	min-width: 160px;
+	max-width: 300px;
+	max-width: 15vw;
+	align-items: center;
+	justify-content: space-around;
+	margin: auto;
+	margin-right: 1%;
+	padding: 0.25em;
+	border: solid 2px $green-5;
+	border-radius: 15px;
+	background-color: #fff;
+}
+
+.widget {
+	margin: 1em auto;
+	padding: 0 4px;
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width: 768px) {
+	.controls {
+		min-width: 120px;
+	}
+}
+
+@media (orientation: portrait) {
+	main {
+		flex-wrap: wrap;
+	}
+
+	.controls {
+		flex-direction: row;
+		min-height: 60px;
+		max-height: 15%;
+		max-height: 15vh;
+		width: 80vw;
+		min-width: $min-width;
+		max-width: 1000px;
+		justify-content: space-between;
+		margin: 0.5em auto;
+		margin-right: auto;
+		padding: 0.25em;
+	}
+}

@@ -1,4 +1,4 @@
-$yellow:#fdb500;
+$yellow: #fdb500;
 $yellow-1: darken($yellow, 5%);
 $yellow-2: darken($yellow, 10%);
 $yellow-3: darken($yellow, 15%);
@@ -27,6 +27,21 @@ $count-bg: #333333;
 $count-border: #666666;
 
 $card-front-bg: #446644;
-$card-front:
-linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+$card-front: linear-gradient(
+		60deg,
+		rgba(0, 0, 0, 0.1) 25%,
+		transparent 25%,
+		transparent 75%,
+		rgba(0, 0, 0, 0.1) 75%,
+		rgba(0, 0, 0, 0.1)
+	),
+	linear-gradient(
+		120deg,
+		rgba(0, 0, 0, 0.1) 25%,
+		transparent 25%,
+		transparent 75%,
+		rgba(0, 0, 0, 0.1) 75%,
+		rgba(0, 0, 0, 0.1)
+	);
+
+$min-width: 350px;

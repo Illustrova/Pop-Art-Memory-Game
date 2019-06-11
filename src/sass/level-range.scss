@@ -1,4 +1,8 @@
-input[type="range"] {
+.level-select {
+	font-size: 1.25em;
+}
+
+input[type='range'] {
 	display: block;
 	width: 100%;
 	height: 5px;
@@ -11,7 +15,7 @@ input[type="range"] {
 	-webkit-appearance: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
 	width: 20px;
 	height: 20px;
 	transition: 0.3s ease-in-out;
@@ -22,7 +26,7 @@ input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 }
 
-input[type="range"]::-webkit-slider-thumb:active {
+input[type='range']::-webkit-slider-thumb:active {
 	transform: scale(1.6);
 }
 
@@ -46,8 +50,8 @@ output {
 	background-color: $card-front-bg;
 	background-image: $card-front;
 	background-size: 9px 15px;
-	font-family: "Orbitron", sans-serif;
-	font-size: 1em;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 16px;
 	line-height: 45px;
 
 	&::before,
@@ -57,12 +61,11 @@ output {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		content: "";
+		content: '';
 		border: solid 2px $yellow-2;
 		border-top: none;
 		border-left: none;
 		border-radius: 10px;
-		// border-bottom-left-radius: 0;
 	}
 
 	&:before {
@@ -83,50 +86,58 @@ output {
 }
 
 #level-output {
-	font-family: "Bangers", cursive;
-	font-size: 1.5em;
+	font-family: 'Bangers', cursive;
+	font-size: 1em;
 }
 
 .easy {
 	color: $yellow;
-	text-shadow: 3px 3px 0 $yellow-5,
-	-1px -1px 0 $yellow-5,
-	1px -1px 0 $yellow-5,
-	-1px 1px 0 $yellow-5,
-	1px 1px 0 $yellow-5;
+	text-shadow: 3px 3px 0 $yellow-5, -1px -1px 0 $yellow-5, 1px -1px 0 $yellow-5,
+		-1px 1px 0 $yellow-5, 1px 1px 0 $yellow-5;
 
 	-webkit-text-stroke: 1px $yellow-5;
 }
 
 .medium {
 	color: $green;
-	text-shadow: 3px 3px 0 $green-5,
-	-1px -1px 0 $green-5,
-	1px -1px 0 $green-5,
-	-1px 1px 0 $green-5,
-	1px 1px 0 $green-5;
+	text-shadow: 3px 3px 0 $green-5, -1px -1px 0 $green-5, 1px -1px 0 $green-5,
+		-1px 1px 0 $green-5, 1px 1px 0 $green-5;
 
 	-webkit-text-stroke: 1px $green-5;
 }
 
 .difficult {
 	color: $blue;
-	text-shadow: 3px 3px 0 $blue-5,
-	-1px -1px 0 $blue-5,
-	1px -1px 0 $blue-5,
-	-1px 1px 0 $blue-5,
-	1px 1px 0 $blue-5;
+	text-shadow: 3px 3px 0 $blue-5, -1px -1px 0 $blue-5, 1px -1px 0 $blue-5,
+		-1px 1px 0 $blue-5, 1px 1px 0 $blue-5;
 
 	-webkit-text-stroke: 1px $blue-5;
 }
 
 .impossible {
 	color: $pink;
-	text-shadow: 3px 3px 0 $pink-5,
-	-1px -1px 0 $pink-5,
-	1px -1px 0 $pink-5,
-	-1px 1px 0 $pink-5,
-	1px 1px 0 $pink-5;
+	text-shadow: 3px 3px 0 $pink-5, -1px -1px 0 $pink-5, 1px -1px 0 $pink-5,
+		-1px 1px 0 $pink-5, 1px 1px 0 $pink-5;
 
 	-webkit-text-stroke: 1px $pink-5;
+}
+
+@media (max-width: 768px) {
+	output {
+		display: none;
+	}
+	#level-output {
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+	.level-select {
+		max-width: 7em;
+		font-size: 75%;
+	}
+	input[type='range'] {
+		max-width: 7em;
+		font-size: 1em;
+	}
 }

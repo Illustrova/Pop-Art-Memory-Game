@@ -8,19 +8,16 @@ dialog {
 	border: solid 1px lightgrey;
 	border-radius: 10px;
 	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-	   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-			box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 
 	h2 {
 		margin-bottom: 1em;
 		text-align: center;
 		color: $yellow;
-		text-shadow: 3px 3px 0 $yellow-5,
-		-1px -1px 0 $yellow-5,
-		1px -1px 0 $yellow-5,
-		-1px 1px 0 $yellow-5,
-		1px 1px 0 $yellow-5;
-		font-family: "Bangers";
+		text-shadow: 3px 3px 0 $yellow-5, -1px -1px 0 $yellow-5,
+			1px -1px 0 $yellow-5, -1px 1px 0 $yellow-5, 1px 1px 0 $yellow-5;
+		font-family: 'Bangers';
 		font-size: 2em;
 
 		-webkit-text-stroke: 1px $yellow-5;
@@ -38,10 +35,8 @@ dialog {
 	.buttons {
 		display: flex;
 		width: 100%;
-	}
-
-	.buttons button:not(:last-child) {
-		margin-right: auto;
+		justify-content: space-between;
+		margin: 0.5em;
 	}
 }
 
