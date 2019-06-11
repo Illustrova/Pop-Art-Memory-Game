@@ -302,7 +302,7 @@ function startGame() {
 	cardsSet.forEach(function(card) {
 		//create card markup
 		let li = document.createElement('li');
-		li.className = 'card';
+		li.className = 'card flip'; //start with open cards for initial rendering, cards flipped back under the preloader
 		let cardFront = document.createElement('div');
 		cardFront.className = 'card-front';
 		let cardBack = document.createElement('div');
