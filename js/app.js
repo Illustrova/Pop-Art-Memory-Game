@@ -11,11 +11,11 @@ const allCards = [
 	'girl9',
 	'girl10',
 	'girl11',
-	'girl6'
+	'girl6',
 ];
 
 /*SELECT ELEMENTS
-*********************/
+ *********************/
 //Deck
 const deck = document.getElementById('deck');
 
@@ -58,7 +58,7 @@ dialogPolyfill.registerDialog(restartDialog);
 dialogPolyfill.registerDialog(winDialog);
 
 /* LISTENERS
-************************/
+ ************************/
 //Check and update cards, star rating and moves counter on every click inside deck
 deck.addEventListener('click', function(evt) {
 	evt.preventDefault();
@@ -84,7 +84,8 @@ btnRestart.addEventListener('click', function(evt) {
 
 //Level range input - display value, and ask for confirmation to start new game, if the current game is already started.
 rangeInput.addEventListener('input', displayRangeValue);
-rangeInput.addEventListener('change', function() {
+rangeInput.addEventListener('change', function(evt) {
+	console.log('TCL: evt', evt);
 	if (openedCards > 0) {
 		restartDialog.showModal();
 	} else {
@@ -111,7 +112,8 @@ playBtn.addEventListener('click', function() {
 });
 
 /* FUNCTIONS
-***********************/
+ ***********************/
+
 //Update range input value and level name
 function displayRangeValue() {
 	let newValue = rangeInput.value;
@@ -143,9 +145,9 @@ function displayRangeValue() {
 
 //Cards
 /**
-* @param {number} openedCards - Current number of opened cards (aka moves)
-* @param {object} evt - Current event
-*/
+ * @param {number} openedCards - Current number of opened cards (aka moves)
+ * @param {object} evt - Current event
+ */
 function handleCards(openedCards, evt) {
 	if (openedCards === 1) {
 		startTimer();
@@ -377,5 +379,4 @@ function endGame() {
 	setTimeout(function() {
 		winDialog.showModal();
 	}, 0);
-
 }
