@@ -85,7 +85,6 @@ btnRestart.addEventListener('click', function(evt) {
 //Level range input - display value, and ask for confirmation to start new game, if the current game is already started.
 rangeInput.addEventListener('input', displayRangeValue);
 rangeInput.addEventListener('change', function(evt) {
-	console.log('TCL: evt', evt);
 	if (openedCards > 0) {
 		restartDialog.showModal();
 	} else {
@@ -302,7 +301,7 @@ function startGame() {
 	cardsSet.forEach(function(card) {
 		//create card markup
 		let li = document.createElement('li');
-		li.className = 'card flip'; //start with open cards for initial rendering, cards flipped back under the preloader
+		li.className = 'card';
 		let cardFront = document.createElement('div');
 		cardFront.className = 'card-front';
 		let cardBack = document.createElement('div');
