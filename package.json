@@ -9,7 +9,7 @@
   "author": "Irina Illustrova",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
     "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
